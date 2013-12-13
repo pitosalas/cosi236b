@@ -15,13 +15,24 @@ COURSE_SHORT_NAME = "COSI 236B"
 COURSE_LONG_NAME = "Software Engineering"
 
 # Sidebar configuration
-SectionBlock = Struct.new(:title, :selector)
+class SectionDef
+	attr_accessor :title, :selector, :options
+	def initialize(title, selector, options = {})
+		@title = title
+		@selector = selector
+		@options = options
+	end
+end
+
 SECTION_CONFIG = [
-		SectionBlock.new("Intro", :intro),
-		SectionBlock.new("PA", :pa),
-		SectionBlock.new("Incubator", :incubator),
-		SectionBlock.new("Background", :background),
-		SectionBlock.new("Lectures", :lectures),
-		SectionBlock.new("Lab", :lab)
+		SectionDef.new("Intro", :intro, type: :section),
+		SectionDef.new("Lectures", :lectures, type: :lecture),
+		SectionDef.new("Lab", :lab, type: :lecture),
+		SectionDef.new("PA", :pa, type: :section),
+		SectionDef.new("Incubator", :incubator, type: :section),
+		SectionDef.new("Background", :background, type: :section),
+		SectionDef.new("Crib Sheets", :cribsheet, type: :section),
+		SectionDef.new("Root", :root, hidden: true, type: :section),
+		SectionDef.new("Topics", :topics, hidden: true, type: :section)
 ]
 
