@@ -1,3 +1,5 @@
+require "./lib/section_def"
+
 # URL for AWS Deployment of the course
 AWS_BUCKET = "cosi236b.courses.salas.com"
 
@@ -14,25 +16,28 @@ COPYRIGHT_STRING = "Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com"
 COURSE_SHORT_NAME = "COSI 236B"
 COURSE_LONG_NAME = "Software Engineering"
 
-# Sidebar configuration
-class SectionDef
-	attr_accessor :title, :selector, :options
-	def initialize(title, selector, options = {})
-		@title = title
-		@selector = selector
-		@options = options
-	end
-end
+# Schedule information. Note that Monday is day 0
+LECTURES_SCHEDULE_CONFIG = ScheduleDef.new(
+		first_day: "January 13, 2014", 
+		last_day: "April 29, 2014",
+		weekdays: [1, 4]) # Tuesday and Friday
+
+LABS_SCHEDULE_CONFIG = ScheduleDef.new(
+		first_day: "January 13, 2014", 
+		last_day: "April 29, 2014",
+		weekdays: [4]) # Thursday
 
 SECTION_CONFIG = [
-		SectionDef.new("Intro", :intro, type: :section),
-		SectionDef.new("Lectures", :lectures, type: :lecture),
-		SectionDef.new("Lab", :lab, type: :lecture),
-		SectionDef.new("PA", :pa, type: :section),
-		SectionDef.new("Incubator", :incubator, type: :section),
-		SectionDef.new("Background", :background, type: :section),
-		SectionDef.new("Crib Sheets", :cribsheet, type: :section),
-		SectionDef.new("Root", :root, hidden: true, type: :section),
-		SectionDef.new("Topics", :topics, hidden: true, type: :section)
+		SectionDef.new("Intro", "intro", type: :section),
+		SectionDef.new("Lectures", "lectures", type: :lecture, schedule: LECTURES_SCHEDULE_CONFIG),
+		SectionDef.new("Labs", "lab", type: :lecture, schedule: LABS_SCHEDULE_CONFIG),
+		SectionDef.new("PA", "pa", type: :section),
+		SectionDef.new("Incubator", "incubator", type: :section),
+		SectionDef.new("Background", "background", type: :section),
+		SectionDef.new("Crib Sheets", "cribsheets", type: :section),
+		SectionDef.new("Root", "root", hidden: true, type: :section),
+		SectionDef.new("Topics", "topics", hidden: true, type: :section)
 ]
+
+
 
