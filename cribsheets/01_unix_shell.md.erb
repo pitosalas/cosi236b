@@ -36,59 +36,63 @@ There are three kinds of streams that Bash commands work with: STDIN, STDOUT and
 ####Most Useful Commands
 
 * List files: **ls**  
-```
+<pre>
 ls         #lists files in the current directory (same as 'ls .')
-```
-```
 ls -l      #lists files in the current directory with details
-```  
-```  
 ls -la     #lists all the files (even hidden files) in the current directory
-```
-```
 ls --help  #prints help information about ls command
-```  
+</pre>
 
 * Change directory: **cd**  
-```
+<pre>
 cd ~       #go to home directory (same as 'cd' without arguments)  
-```  
-```
 cd ../     #go to the parent directory
-```  
-
+</pre>
 
 * Copy files: **cp**  
-```  
+<pre>
 cp source.txt dest.txt   
-```  
-```
-cp -r mydir ~/       #copy the directory 'mydir' recursively to my home directory  
-```  
-```
+cp -r mydir ~/               #copy the directory 'mydir' recursively to my home directory  
 cd -i source.txt dest.txt    #prompt before overwritting
-```  
+</pre>
 
-
-* Moving files: **mv**  
-```  
-mv source.txt dest.txt   
-```  
-```
-mv mydir ~/       #move the directory 'mydir' recursively to my home directory  
-```  
-```
+* Move files: **mv**
+<pre>
+mv source.txt dest.txt
+mv mydir ~/                  #move the directory 'mydir' recursively to my home directory  
 mv -i source.txt dest.txt    #prompt before overwritting
-```  
+</pre>
 
 
-* Removing files: **rm**  
-```  
+* Remove files: **rm**  
+<pre>
 rm source.txt   
-```  
-```
 rm -r mydir       #remove directory 'mydir' recursively
-```  
-```
-rm -i *.txt       #remove all files with .txt extension but ask before removing
-```  
+rm -i *.txt       #remove all files with .txt extension but ask before removing 
+</pre>
+
+* Symbolic link: **ln**  
+<pre>
+ln -s /directory/foo.txt                  #make a symbolic link with the same name in the current directory
+ln -s /directory/foo.txt myfile.txt       #make a symbolic link with another name (myfile.txt)
+</pre>
+
+* Current directory: **pwd**  
+<pre>
+pwd     #prints the current working directory
+</pre>
+
+* Create a directory: **mkdir**  
+<pre>
+mkdir mydir   #create a directory named "mydir" in the current working directory
+</pre>
+
+* Manual: **man**  
+<pre>
+man ls        #show manual page for ls command
+</pre>
+
+* Run a command as the root: **sudo**  
+<pre>
+sudo rm -rf /tmp/foo.txt        #execute the rm command as the root user
+</pre>
