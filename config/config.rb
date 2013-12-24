@@ -1,4 +1,5 @@
-require "./lib/section_def"
+require './lib/schedule_def.rb'
+require './lib/section_def.rb'
 
 # URL for AWS Deployment of the course
 AWS_BUCKET = "cosi236b.courses.salas.com"
