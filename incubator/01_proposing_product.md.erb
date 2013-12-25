@@ -39,3 +39,21 @@ In order to propose a product you need to submit an Incubator Product Proposal.
 * **Money**: [how might this product become self-sustaining or even profitable?]
 
 * **Personal statement:** [why I think this is a product that should be built, and why I want to build it]
+
+* **Design**: One or two "paper prototypes" to illustrate your current vision of the product. It is really not necessary to make them super pretty, the intent is to show what, for example, the home page or some other critical page would look like, roughly. Focus more on the commands or menus or links, and terminology. And consider whether someone looking at that screen would have a sense of what the product is doing and what the user is supposed to do. A neat hand drawing is fine. Scan or photograph it and include a Jpeg.
+
+* **Basic Database Schema:** Think about the "things" (entities) that the product's database will need to keep track of. Entities are often nouns, like User, Event, Pet, Manufacturer, Animal Shelter, and so on. Think also about the relationships between them, one to one, one to many, and so on. For example, User to Pet is one to many, Pet to Breed is Many to One, and so on. Describe your database schema at a high level, for example:
+
+        Entity: Pet
+            Name
+            Owner
+            Breed
+        Entity: Animal Shelter
+            Name
+            Pets
+            Address
+            Phone Number
+        Relationships
+            Animal Shelter to Pet is One to Many
+
+
