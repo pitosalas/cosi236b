@@ -1,8 +1,6 @@
 ---
 title: Letter grades
-section: background
 type: page
-order: 3
 ---
 At the middle and end of the term you will receive letter grades. It's important to remember that a "B" is a totally reasonable grade (everyone always seems to forget this!) 
 
