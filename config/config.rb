@@ -28,6 +28,7 @@ LABS_SCHEDULE_CONFIG = ScheduleDef.new(
 		last_day: "April 29, 2014",
 		weekdays: [4]) # Thursday
 
+# Sections in the right hand margin of the page
 SECTION_CONFIG = [
 		SectionDef.new("Lectures", "lectures", type: :lecture, schedule: LECTURES_SCHEDULE_CONFIG),
 		SectionDef.new("Labs", "lab", type: :lecture, schedule: LABS_SCHEDULE_CONFIG),
