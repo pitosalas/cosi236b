@@ -1,0 +1,22 @@
+---
+title: Vagrant Setup
+type: page
+---
+
+[Vagrant](http://www.vagrantup.com/) is a software that acts as a wrapper around [virtualization](http://en.wikipedia.org/wiki/Virtualization) software like [VirtualBox](https://www.virtualbox.org/) and [VMWare](http://www.vmware.com/), and provides a more convenient approach to setup reproducible and portable work environments and an efficient and flexible workflow. It can easily be integrated with [provisioning tools](http://docs.vagrantup.com/v2/provisioning/) like Chef and Puppet, and there are many useful plugins that can be installed to add optional features. <br/><br/>  
+
+
+####How to setup Vagrant
+
+Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). After VirtualBox is installed, download [the provided Vagrant box](http://goo.gl/hd8uHK) and follow the steps below:
+
+1. Download Vagrant from [here](http://www.vagrantup.com/downloads.html)
+2. Install it and make sure that you can run `vagrant` from your terminal (on windows run it in command prompt, and on OS X run it in Terminal app)
+3. Create a new directory anywhere you prefer. This directory will contain Vagrant config file and all your projects' files)
+4. Open your terminal
+5. Go to the directory you created in step 3 by running `cd <path to your directory>`
+6. Run `vagrant box add <box name> <path to the .box file>` (e.g. `vagrant box add ubuntu13.10 ubuntu-13.10-i386.box`)
+7. Run `vagrant init <box name>`. Note: `<box name>` should be the same as the one you entered in step 6. (e.g. `vagrant init ubuntu13.10`)
+8. Run `vagrant up`
+
+If the last command works fine, you can connect to your box by running `vagrant ssh`. 
