@@ -10,7 +10,7 @@
 
 	a[0] = "Truth"
 	a[1] = "even"
-	a[2] = "onto"
+	a[2] = "unto"
 	a[3] = "its"
 	a[4] = "innermost"
 	a[5] = "parts"
