@@ -19,14 +19,14 @@ COURSE_LONG_NAME = "Software Engineering"
 
 # Schedule information. Note that Monday is day 0
 LECTURES_SCHEDULE_CONFIG = ScheduleDef.new(
-		first_day: "January 13, 2014", 
-		last_day: "April 29, 2014",
-		weekdays: [1, 4]) # Tuesday and Friday
+		first_day: "January 14, 2014", 
+		weekdays: [:tuesday, :friday],
+		number: 26)
 
 LABS_SCHEDULE_CONFIG = ScheduleDef.new(
-		first_day: "January 13, 2014", 
-		last_day: "April 29, 2014",
-		weekdays: [4]) # Thursday
+		first_day: "January 16, 2014", 
+		weekdays: [:thursday],
+		number: 13)
 
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
