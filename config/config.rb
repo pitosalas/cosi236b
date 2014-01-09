@@ -19,9 +19,10 @@ COURSE_LONG_NAME = "Software Engineering"
 
 # Schedule information. Note that Monday is day 0
 LECTURES_SCHEDULE_CONFIG = ScheduleDef.new(
-		first_day: "January 14, 2014", 
+		first_day: "jan-14-2014", 
 		weekdays: [:tuesday, :friday],
-		number: 26)
+		number: 26,
+		skips: ["feb-18-2014", "feb-21-2014"])
 
 LABS_SCHEDULE_CONFIG = ScheduleDef.new(
 		first_day: "January 16, 2014", 
