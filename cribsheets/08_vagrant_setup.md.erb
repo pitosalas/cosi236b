@@ -8,15 +8,21 @@ type: page
 
 ####How to setup Vagrant
 
-Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). After VirtualBox is installed, download [the provided Vagrant box](http://goo.gl/hd8uHK) and follow the steps below:
+Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). After VirtualBox is installed (if you are using Windows make sure that you restart after installation completes), download [the provided Vagrant box](http://goo.gl/hd8uHK) and follow the steps below:
 
 1. Download Vagrant from [here](http://www.vagrantup.com/downloads.html)
 2. Install it and make sure that you can run `vagrant` from your terminal (on windows run it in command prompt, and on OS X run it in Terminal app)
-3. Create a new directory anywhere you prefer. This directory will contain Vagrant config file and all your projects' files)
-4. Open your terminal
-5. Go to the directory you created in step 3 by running `cd <path to your directory>`
-6. Run `vagrant box add <box name> <path to the .box file>` (e.g. `vagrant box add ubuntu13.10 ubuntu-13.10-i386.box`)
-7. Run `vagrant init <box name>`. Note: `<box name>` should be the same as the one you entered in step 6. (e.g. `vagrant init ubuntu13.10`)
-8. Run `vagrant up`
+3. If you are using Windows, restart your computer after Vagrant installation completes.
+4. Create a new directory anywhere you prefer. (This directory will contain Vagrant config file and all your projects' files)
+5. Open your terminal
+6. Go to the directory you created in step 3 by running `cd <path to your directory>`
+7. Run `vagrant box add <box name> <path to the .box file>` (e.g. `vagrant box add ubuntu13.10 ubuntu-13.10-i386.box`)
+8. Run `vagrant init <box name>`. Note: `<box name>` should be the same as the one you entered in step 6. (e.g. `vagrant init ubuntu13.10`)
+9. Run `vagrant up`
 
 If the last command works fine, you can connect to your box by running `vagrant ssh`. 
+<br/><br/>
+
+####Development Environment
+
+We use Sublime Text 3 for writing code during this course. You may be familiar with other text editors like Vim and Emacs, but we recommend you to use Sublime Text 3 for this course which you can download from [here](http://www.sublimetext.com/3). Also make sure to install [seeing is believing](https://github.com/JoshCheek/sublime-text-2-seeing-is-believing) and [package control](https://sublime.wbond.net/installation) plugins.
