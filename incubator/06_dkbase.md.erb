@@ -1,0 +1,65 @@
+---
+title: Option - Dynamic Knowledge Base
+type: page
+---
+* **Proposer**: Noranda Brown
+
+* **Product name**: Dynamic Knowledge Base (DKB)
+
+* **Tweet length summary of project:** An easy-to-use knowledge base application which creates and stores articles of information for personal or profession use.
+
+* **Team Members:** Noranda Brown + 3
+
+* **Product Summary:** Our dynamic knowledge base application is used to store professional knowledge on any topic by storing information in a central repository. This repository can be used by small to large organizations for employee training or information storage.
+
+The knowledge base contains two types of information: open articles and closed articles. Open articles are created when the user has a question about a topic that is not currently found in the knowledge base. A communication thread is opened between the requestor, and the owner of the open article (the person who can answer the question). Using the application, the requestor submits a question to the owner. The thread is kept open until the question has been answered, at which time, the owner can close the article. A closed article becomes searchable by all users with access.
+
+Features of this application will include the option for owners to edit or delete articles, advanced search options, rating articles based on how useful they were to the reader, reports, and accessibility options.
+
+* **Elevator pitch:** Information is instrumental to professional lives. The knowledge we gain from training and experience are collected and used, but rarely retained when that knowledge is no longer utilized. For example, a person may start a new job as a bookkeeper with little knowledge. It may take weeks to months of training from another employee to gain sufficient knowledge about the job. Perhaps a year goes by and this person is promoted to a management position. A new employee is hired to take over as bookkeeper who must begin from scratch, all-the-while the treasure of knowledge built up from the manager has gone to waste. Our knowledge base application strives to end this cycle by creating an easy-to-use method of storing this information for later use.
+
+* **Personal statement:** I have worked over 10 years in fast-paced workplaces where employee turnover was high and employee training was a stressful process involving countless emails and weeks of sitting with already-busy employees to gain their knowledge about the job. I would often fill yellow legal pads with this information, which prevented me from needing to ask a question more than once. When I left a position, I would always leave the legal pads filled with my notes in my desk, with the hope that they would be helpful to the next employee. Thus, I understand the structure of these organizations and the need for a product such as ours.
+
+* **Describe the customer(s):** This product is geared towards small to large organizations. Customers will be interested in building a database of sharable knowledge which can be easily edited. Customers will be concerned about privacy and security protocols.
+
+* **Describe what "jobs" the product will do for the customer:** Our product will provide a means to record information on any topic through avenues that already exist in most organizations: namely emailing a question to an answerer. Our product will collect these articles in an organized manner for easy access to a specified user-base with the appropriate access rights to the information.
+
+* **Money**: Our product will charge a monthly fee which will allow access to all features of the application including a large user-base and plenty of storage space.
+
+* **Customer Pains/Gains:** Our product increase productivity by allowing quick access to specific data, without the hassle of figuring out who to ask and waiting for the reply. It will also free up time for the answerers of the common questions to focus on other work. Finally, it will allow a robust record of invaluable organization knowledge to be kept despite employee turnover.
+
+##### Appendix 1: Schema
+
+###### Entities:
+
+* User:
+	* Id
+	* Name
+	* Email
+	* Title
+	* Articles Owned
+  * Open Questions
+
+* Article
+	* Id
+	* Status
+	* Owner
+	* Date Opened
+  * Date Closed
+  * Accessibility
+  * Rating
+  * Content
+
+* Report
+	* Id
+	* Title
+	* Type
+	* Content
+
+##### Relations:
+
+* User to Article is One to Many
+* Report to Article is One to Many
+
+<hr/>
+<%= include_image "dkbase_design.jpg" %>
