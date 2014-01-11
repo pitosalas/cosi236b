@@ -8,7 +8,7 @@ type: page
 
 ####How to setup Vagrant
 
-Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). After VirtualBox is installed (if you are using Windows make sure that you restart after installation completes), download [the provided Vagrant box](http://goo.gl/hd8uHK) and follow the steps below:
+Before installing Vagrant you should have one provider installed. For this course we recommend you to use [VirtualBox](https://www.virtualbox.org/). After VirtualBox is installed (if you are using Windows make sure that you restart after installation completes), download [the provided Vagrant box](http://goo.gl/5H4Jrn) and follow the steps below:
 
 1. Download Vagrant from [here](http://www.vagrantup.com/downloads.html)
 2. Install it and make sure that you can run `vagrant` from your terminal (on windows run it in command prompt, and on OS X run it in Terminal app)
@@ -23,3 +23,18 @@ Before installing Vagrant you should have one provider installed. For this cours
 If the last command works fine, you can connect to your box by running `vagrant ssh`. 
 <br/><br/>
 
+####Development Environment
+
+You may put your projects' files in the directory that you created during Vagrant setup so you would have access to it from your virual machine instance in /vagrant directory. You have two options to edit and run your codes:
+
+1. You can install Sublime Text on your host machine and write your codes there and then run them on your virtual machine instance. This way you can interact with your vm instance via ssh. 
+
+2. You can interact with your vm instance via GUI, and write your codes and run them on your vm instance. If you choose this option you have to enable vm GUI in your Vagrant config file by editing Vagrantfile that has been generated in the directory you created while setting up Vagrant and writing/uncommenting the following lines:  
+
+<pre>
+config.vm.provider :virtualbox do |vb|
+   vb.gui = true
+end
+</pre>
+
+**Note**: make sure you relaunch your vm instance after the changes by running `vagrant halt` and then `vagrant up`.
