@@ -1,0 +1,60 @@
+---
+title: Option - Real-time Productivity
+type: page
+---
+* **Proposer**: Noranda Brown
+
+* **Product name**: Real-time Productivity Management Tool
+
+* **Tweet length summary of project:** A real-time task management tool that allows users to organize their tasks automatically and dynamically in order to maximize productivity.
+
+* **Team Members:** Noranda Brown + 3
+
+* **Product Summary:** Maximizing productivity is essential in today’s fast-paced workplace with our increasingly busy schedules. Time management is key, but even with the best task management applications available, productivity is left entirely up to the user.
+
+  Our product is a new kind of task management application with a focus on productivity. At its center is a dynamic, real-time scheduling calendar. The user creates new tasks including a category, due date/time, and an estimated time to complete the task. Using a sophisticated task management algorithm, Our product will insert each task into the user’s calendar, automatically reorganizing all future tasks to maximize productivity for the user. Users can customize how to best maximize productivity with options such as grouping similar tasks together, completing smaller tasks in the morning to build momentum, or including breaks at specified intervals. Tasks can also be manually arranged and an override option will allow the user to fix a task to a certain time if desired.
+
+  The goal of this project is to go beyond the simple to-do list by providing users with tools to maximize their productivity.
+
+* **Elevator pitch:** In today’s fast-paced world, time is money, making productivity more important than ever before. Automating managing tasks in a productive manner is no simple task. Person A may work better completing smaller tasks in the morning to gain momentum for the rest of the day. Person B may work better performing similar tasks together. Person C may need to take regular breaks to prevent being burnt out. Our product recognizes these differences and provides a calendar-based tool to automatically organize tasks in the most efficient manner for the user. Our product is more than a task management tool: it is a revolution in productivity management.
+
+* **Personal statement:** I’ve been a student for most of my life, but I’ve also worked over 10 years in fast-paced workplaces where organization and productivity were the key to success. I’ve used everything from notebooks, to whiteboards, to Excel spreadsheets to organize my workload. I currently use a combination of my Google Calendar and Trello, which gave me the idea to find a way to integrate the two. As anyone with a heavy workload will tell you, it takes time to figure out how to be productive, which ironically lowers productivity. This tool can change that.
+
+* **Describe the customer(s):** The customer is anyone with a busy schedule looking to increase their productivity. This may include students, workplace or work-at-home employees, business owners, or upper management. They will desire a simple interface and may be concerned about privacy and security.
+
+* **Describe what "jobs" the product will do for the customer:** Our product will provide an automated dynamic task schedule customized to each customer in order to maximize productivity. It will allow the customer to get the most out of each day without the hassle of scheduling it themselves. The customer will have customizable options to add, delete, edit, or move tasks and to create/change their productivity profile, on which the task management algorithm is based.
+
+* **Money**: As with most task management applications, Our product will be free to use online, but may include a Gold and/or Business option for a monthly fee which will allow access to additional features of the application. Additional features may include the option to share calendars with multiple users, allow attachments, utilize Google Apps integration, bulk export, or extra administrative controls.
+
+* **Customer Pains/Gains:** Our product will free up time and increase productivity for its customers. They may use the tool to experiment with productivity profiles to learn which is best for them. They may also use the tool as a timeline snapshot to assess their workload.
+
+##### Appendix 1: Schema
+
+###### Entities:
+
+* User
+  * Id
+  * Name
+  * Email
+  * Password
+
+* Task
+  * Id
+  * Calendar Id
+  * Status
+  * Estimated Time to Complete
+  * Due Date/Time
+  * Start Date/Time
+  * Details
+
+* Calendar
+  * Id
+  * User Id
+  * Title
+  * Accessibility
+
+##### Relations:
+
+* User to Task is One to Many
+* User to Calendar is One to Many
+* Calendar to Task is One to Many

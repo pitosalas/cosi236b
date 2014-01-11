@@ -33,9 +33,9 @@ LABS_SCHEDULE_CONFIG = ScheduleDef.new(
 SECTION_CONFIG = [
 		SectionDef.new("Lectures", "lectures", type: :lecture, schedule: LECTURES_SCHEDULE_CONFIG),
 		SectionDef.new("Labs", "lab", type: :lecture, schedule: LABS_SCHEDULE_CONFIG),
-		SectionDef.new("Background", "background", type: :section),
-		SectionDef.new("PA", "pa", type: :section),
 		SectionDef.new("Incubator", "incubator", type: :section),
+		SectionDef.new("PA", "pa", type: :section),
+		SectionDef.new("Background", "background", type: :section),
 		SectionDef.new("Crib Sheets", "cribsheets", type: :section),
 		SectionDef.new("Root", "root", hidden: true, type: :section),
 		SectionDef.new("Topics", "topics", hidden: true, type: :section)
