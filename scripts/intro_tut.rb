@@ -1,4 +1,4 @@
-	# Strings, Numbers are a class
+''	# Strings, Numbers are a class
 
 	1.class            # => Fixnum
 	"Greetings".class  # => String
