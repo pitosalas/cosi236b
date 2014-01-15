@@ -2,13 +2,37 @@
 title: Test Driven Development
 type: page
 ---
-##### Homework due for today
+<%= homework_hdr %>
+* Read [MiniTest::Spec tutorial](http://www.rubyinside.com/a-minitestspec-tutorial-elegant-spec-style-testing-that-comes-with-ruby-5354.html)
+* Read [Minitest Quick Reference](http://mattsears.com/articles/2011/12/10/minitest-quick-reference)
+* Using the above, write a Ruby program that defines a method add(x, y) and a single test that checks that add actually does an addition. Create a github repo with your solution <%= deliverable "Post the link to the repo in github" %>
 
-##### Test Driven Development
-* Different kind of testing and why they are important
-* Unit testing, integration testing, end-to-end testing
-* Lets look at an example of unit testing done 'by hand'
-* A variety of tools and techniques to avoid repetitious coding
-* Doing the same example with RSpec
+#### Test Driven Development
+
+* Ruby community is especially focused on quality and testing
+* There are different kinds of testing and why they are important
+	* Unit testing: test a small unit of code that has few side effects
+	* Integration testing: test a subsystem that has many components
+	* End-to-end testing: test the complete system from top to bottom
+	* Code Coverage: Seeing how much of your actual code is run during a test or production
+	* Performance testing: Checking the speed of your code
+	* and there are some other categories
+
+#### How you might unit test "by hand"
+
+<%= include_ruby :tdd0_tut %>
+
+#### How can you automate this with tools
+
+* There are a huge variety of tools and techniques to avoid repetitious coding
+* We will be using the built-in unit testing framework called "minitest"
 * For this course focus ONLY on unit testing
+
+#### A Cosi101 Factorial Function using minitest
+
+<%= include_ruby :tdd1_tut %>
+
+#### Testing a full ruby class
+
+<%= include_ruby :tdd1_tut %>
 
