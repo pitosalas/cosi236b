@@ -9,11 +9,30 @@ css_class: bold
 * Continue working on <%= link_to_pa :PA1 %>
 * <%= deliverable "Check in your PA1 so far into Github and post the link into piazza. Remember to number it 2-1!" %>
 
+#### Review: Git Basics
+* Recommended local directory structure:
+<%=code_begin%>
+~/mydev
+    /pa1
+    /pa2-test
+    /sdasdasd
+    /experiment
+    ...
+<%=code_end %>
+* Commands done only from your top level "mydev" directory
+    * git clone (create a new directory from a repo on github)
+* Commands done from inside an individual repos local directory
+    * git add --all (add all changed files to staging)
+    * git commit -m "message" (create a "commit" with all staged files)
+    * git push (push all local commits up to github)
+    * git pull (pull any changes made from github to look at it locally)
+    * git status (see where things stand)
+* NB: Don't do a git clone from 'inside' a local repo directory
+
 #### Overview and course web site
 
 * How will the whole term work? Let's look at the <%= link_to_background :term_overview %> 
 * How will the lab work? Does it have it's own grade? <%= link_to_background :lab_overview %>
-* Let's look at the <%= link_to_background :grading %>
 * How will the projects work? <%= link_to_background :project_process %>
 
 
