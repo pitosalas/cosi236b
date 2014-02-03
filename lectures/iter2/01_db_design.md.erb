@@ -1,5 +1,6 @@
 ---
 title: Database Design
+css_class: bold
 ---
 <%= homework_hdr %>
 * Continue working on Programming Assignment 3, <%= link_to_pa :PA3 %>. <%= deliverable "Check in your progress to date into Github" %>
@@ -12,17 +13,28 @@ title: Database Design
 * Read [Basics of good database design in Web Development](http://www.onextrapixel.com/2011/03/17/the-basics-of-good-database-design-in-web-development/)
 * Product Teams: Using all that background, develop initial schema for your product. Include table names, field or attribute names, and relations or joins. <%= team_deliverable "Detailed initial schema for your product. Any form you want." %>
 
-#### Review of DB Design
+#### Note
 * For links about Rails that go beyond: <%= link_to_topic :rails_resources %>
-* Link to <%= link_to_topic :data_modeling %>
 
 #### Relational Databases and Object Oriented Software
 * What does an ORM do?
+* "Impendance misatch"
+* The "ActiveRecord" Object Oriented Pattern
+	* Wraps records *you are working on* inside an object of the Active Record pattern
+	* **Not** every record in the database, just what the code is working on at one time or another
 * The Rails Activerecord layer
 * What is the relationship between the underlying DB and the AR objects
 * What is database Migration. What problem does it solve?
 
+#### A level deeper: Data Modeling
+* Link to <%= link_to_topic :data_modeling %>
+
 #### Review each of the 5 products tables so far
+* VaperRater
+* Whats Going On
+* Affective Tutor
+* Real Time Productivity
+* Investment Advisor
 
 #### Next Class
 * Review Homework: <%= link_to_lecture :db_implementation %>
