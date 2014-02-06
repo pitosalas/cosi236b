@@ -6,22 +6,10 @@ css_class: bold
 * Read Chapters 5 and 6 of AWDR. It is important that you really try and execute all the code snippets there and get them to work. Notice that "rails new depot" creates a directory called "depot" from whereever you are. So cd to your /mydev and to rails new depot from there. Follow along and do all the code in Chaoter 6, prove to yourself that it runs. <%= deliverable "Screencast of you demonstrating what you got to work from those two chapters." %>
 * Work on Programming Assignment 3. Post latest to github. (See <%= link_to_pa :PA3 %>)
 
-#### Database
-* "If you don't know the schema of your app, you don't know your app" - Said one of our outside reviewers over lunch today
-* ORM means we have to keep the database and the Objects "in sync"
-* What happens if in release 2 I have to modify the database?
-
-#### Migration
-* When you discover you need a new column or table, you can modify the database
-* E.g.break the "name" field into a "first name" and "last name" 
-* Data Migration
-	* How do I move over all the user records that were already there?
-* Logic Migration
-	* What has to change in the server code to accomodate this change?
-* Does this mean that migration is bad?
-	* It's not good nor bad: it's unavoidable
-	* It's much more painful when you are 'in production'
-<%= include_topic :rails_db_mechanics %>
+#### Models and Databases
+* <%= link_to_topic :models %>
+* <%= link_to_topic :database_migration %>
+* <%= link_to_topic :rails_db_mechanics %>
 
 #### Next Class
 * Look at homework: <%= link_to_lecture :mvc_and_model %> 
