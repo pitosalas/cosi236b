@@ -5,5 +5,43 @@ title: MVC and the model
 * Complete Programming Assignment 3 (<%= link_to_pa :PA3 %>) <%= deliverable "PA3 in github and screencast of you demoing it. Post both links in Piazza as your submission." %>
 * Look at <%= link_to_topic :hw_schema_design %>. <%= deliverable "Create a piazza post with a schema for each of the assignments, in the format suggested." %>
 
+#### http://www.brandeis.edu/index.html
 
-##### Data
+<%= include_image "mvc_detailed.png" %>
+
+#### Review of MVC
+
+* Reminder: 
+	* Basic Client <-> Server structure
+	* MVC is a general pattern
+	* Here we are applying it to a web (http) **server**
+* The Models: contains the application 'state'
+	* Think of it as what you want preserved if your app (i.e. the server in our case) has to be restarted
+	* Think of your user's reasonable expectations
+	* Discussion
+* The Controllers: master control switch
+	* Sees requests from the outside world
+	* Asks the models for data, sometimes updates the data
+	* Asks the views for new pages or results
+	* Responds to the request
+	* (Note: this parallels the HTTP protocol exactly!)
+* The Views
+	* Use data (given by the controller)
+	* To create and assemble responses to be sent
+	* Responses are html, but may be other formats too
+
+#### Fundamental importance of the URL
+* In particular the 'path' part of the URL
+* e.g. 
+	* http://roomscheduler.com/room/3/request
+	* http://bookstore.com/book/412/price
+	* http://tourmanager.com/city/boston/tour/tuesday/new
+* There are many ways to structure a url
+* This 'style' is sometimes called RESTful
+
+
+
+
+
+
+
