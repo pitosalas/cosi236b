@@ -6,41 +6,8 @@ title: MVC and the model
 * Look at <%= link_to_topic :hw_schema_design %>. <%= deliverable "Create a piazza post with a schema for each of the assignments, in the format suggested." %>
 * Read ADWR Chapter 7, Validation and Unit Testing. Try your best to understand what's being covered. Do the code examples and get them to work. And as you go make notes. <%= deliverable "Blog post with short paragraphs describing two things you just did not understand and two things you learned." %>
 
-#### http://www.brandeis.edu/index.html
 
-<%= include_image "mvc_detailed.png" %>
-
-#### Review of MVC
-
-* Reminder: 
-	* Basic Client <-> Server structure
-	* MVC is a general pattern
-	* Here we are applying it to a web (http) **server**
-* The Models: contains the application 'state'
-	* Think of it as what you want preserved if your app (i.e. the server in our case) has to be restarted
-	* Think of your user's reasonable expectations
-	* Discussion
-* The Controllers: master control switch
-	* Sees requests from the outside world
-	* Asks the models for data, sometimes updates the data
-	* Asks the views for new pages or results
-	* Responds to the request
-	* (Note: this parallels the HTTP protocol exactly!)
-* The Views
-	* Use data (given by the controller)
-	* To create and assemble responses to be sent
-	* Responses are html, but may be other formats too
-
-#### Fundamental importance of the URL
-* In particular the 'path' part of the URL
-* e.g. 
-	* http://roomscheduler.com/room/3/request
-	* http://bookstore.com/book/412/price
-	* http://tourmanager.com/city/boston/tour/tuesday/new
-* There are many ways to structure a url
-* This 'style' is sometimes called RESTful
-
-
+<%= include_topic :mvc_review %>
 
 
 
