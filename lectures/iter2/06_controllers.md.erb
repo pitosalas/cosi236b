@@ -10,11 +10,25 @@ title: Understanding controllers
 #### Job of the controller
 * Recall, the URL is parsed by the router, which locates and calls the right controller
 * Breaking it down:
+    1. Router parses URL
+    1. Determines the controller (error: Can't find Controller's ruby file in app/controllers/)
+    1. Determines the action insider the controller (error: Can't find a method for the action
+    1. Calls the action method, with the parameters corresponding to the 'rest' of the url
+    1. When action completes, a view of the same name is located (error: Can't find Views html.erb file in the views/<controllername>/ directory)
+    1. View's 'erb' is expanded and returned, through controller, router, web server, back to the user.
 
 #### Resources in Rails
 * Automatic wiring of plumbing between urls, routing, models, and controllers
-* Huge time saver and bug saver
+* Takes advantage of standardized patterns
+    * CRUD operations as actions
+    * Nesting model in the URLs
+    * Controller naming
+* Huge time saver and bug saver!
+
+#### Demo
 * Lets take a look: <%= link_to_topic :controllers_resources %>
+
+
 
 
 
