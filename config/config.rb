@@ -39,7 +39,8 @@ SECTION_CONFIG = [
 		SectionDef.new("Crib Sheets", "cribsheets", type: :section),
 		SectionDef.new("Background", "background", type: :section),
 		SectionDef.new("Root", "root", hidden: true, type: :section),
-		SectionDef.new("Topics", "topics", hidden: true, type: :section)
+		SectionDef.new("Topics", "topics", hidden: true, type: :section),
+		SectionDef.new("Search", "search_results", hidden: true, type: :section)
 ]
 
 
