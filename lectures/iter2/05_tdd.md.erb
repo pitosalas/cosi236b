@@ -1,6 +1,6 @@
 ---
 title: Test Driven Development
-type: page
+css_class: bold
 ---
 <%= homework_hdr %>
 * Read [MiniTest::Spec tutorial](http://www.rubyinside.com/a-minitestspec-tutorial-elegant-spec-style-testing-that-comes-with-ruby-5354.html)
@@ -10,13 +10,22 @@ type: page
 * Complete and tighten up your Product Dossier. Incorporate feedback that you have received.<%= team_deliverable "Post the url to your dossier to Piazza." %> *Note:* Once you have incorporated feedback and finalized the dossier, email it to your PR in a proper business email :)
 
 #### 3 Minute Survey
-* **Remember**
+* **Remember to give the link**
 
-#### Testing
+#### Discussion on homework
+* Did you realluy do TDD? What is the key to it?
+* How did it feel to program in this way? Was it easier, harder, different?
+* Conventions: file names, separating the tests from the code (why?)
+
+#### Testing Intro
 <%= include_topic :tdd_intro %>
 
 #### Demo
 * <%= link_to_topic :tdd_demo %>
+
+#### Discussion
+* What do "I" do with testing in "real life"?
+* Let's review some of the options in [Minitest Quick Reference](http://mattsears.com/articles/2011/12/10/minitest-quick-reference)
 
 ##### Test Data
 * Sometimes known as test fixtures
@@ -24,3 +33,26 @@ type: page
 * Some ways of thinking about test data
 * Avoiding Brittle tests
 * Mocking objects
+    * Let's look at some of the code that runs this web site.
+    * Note slightly different syntax because of RSpec vs. minitest/spec
+    * [citem_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/citem_spec.rb)
+    * [toc_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/toc_spec.rb)
+
+#### Testing in Rails (if we have time)
+* Principle is the same
+* Remember there's no good reason to test whether Rails is doing what it is supposed to do
+* For example, whether validations are validating, or whether has_many is actually working
+    * Maybe a few tests to poke some holes, but certainly not each and every test.
+* Reference: [Using Minitest/spec with Rails 4](http://blowmage.com/2013/07/08/minitest-spec-rails4)
+* Let's take a tour of all the test bits that are created for free for you in Rails
+<%= code_begin %>
+rails new shoes
+group :test do
+  gem 'minitest-spec-rails'
+end
+rails generate scaffold Shoes name:string price:float color:string size:integer
+rake db:migrate
+<%= code_end %>
+
+
+
