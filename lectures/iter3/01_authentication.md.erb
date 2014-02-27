@@ -1,0 +1,39 @@
+---
+title: Authentication
+---
+<%= homework_hdr %>
+* Read: * Reference: [Ruby on Rails Tutorail](http://ruby.railstutorial.org/chapters/modeling-users#book_menu) - Chapters 6,7 and 8
+
+
+#### Introduction
+* As an app runs, need to know "who is loggred in"
+* Remember the case of "no one is logged in"
+* User is designated internally by a User (or Account, or similar concept)
+
+#### Mechanics
+* Authentication support has to:
+	* Present a log in page
+	* Present a account creation page
+	* Check the "credentials"
+	* Make the identity of the logged in user 'globally available' within your app
+	* What is the 'identify of the logged in user?', it's just a method called 'logged_in_user' that when called returns an instance of the User model.
+* But should not:
+	* Decide what operations that user may do or not. Conceptually and architecturally, should be kept separately
+	* Store the user's password in a database. How do you authenticate then?
+
+#### Implementation and Tools
+* There are several popular gems to implement authentication
+* Beware that the fact that there is a gem does not mean that it's trivial
+* You need to understand what's going on.
+* Advice: Avoid getting fancy with OAuth, or FB or LinkedIn log in.
+* Start with a simple password
+
+<%= include_topic :basic_authentication %>
+
+
+
+
+
+
+
+
