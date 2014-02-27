@@ -1,13 +1,46 @@
 ---
 title: Understanding controllers
+css_class: bold
 ---
 <%= homework_hdr %>
 * Read AWDR Chapter 18 (Finding your way around Rails) and 19 (Active Record). Keep a notepad handy, and write down several specific things that you still don't understand and several new cool things you learned. <%= deliverable "Piazza post with those two lists." %>
 * Continue working with your team on your product!
 
+### Continued from previous lecture
+
+#### Test Data
+* Sometimes known as test fixtures
+* What is the role of data in developing tests for your application
+* Some ways of thinking about test data
+* Avoiding Brittle tests
+* Mocking objects
+    * Let's look at some of the code that runs this web site.
+    * Note slightly different syntax because of RSpec vs. minitest/spec
+    * [citem_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/citem_spec.rb)
+    * [toc_spec.rb](https://github.com/pitosalas/curriculu/blob/master/spec/toc_spec.rb)
+
+#### Testing in Rails (if we have time)
+* Principle is the same
+* Remember there's no good reason to test whether Rails is doing what it is supposed to do
+* For example, whether validations are validating, or whether has_many is actually working
+    * Maybe a few tests to poke some holes, but certainly not each and every test.
+* Reference: [Using Minitest/spec with Rails 4](http://blowmage.com/2013/07/08/minitest-spec-rails4)
+* Let's take a tour of all the test bits that are created for free for you in Rails
+<%= code_begin %>
+rails new shoes
+group :test do
+  gem 'minitest-spec-rails'
+end
+rails generate scaffold Shoes name:string price:float color:string size:integer
+rake db:migrate
+<%= code_end %>
+
+### Controllers and Resources
+
 #### REST, Resources and Controllers
 * We've had some discussions about designing URLs
 * We talked about using a "directory structure-like" syntax for your URLs.
+* Reference: [Rails Guide about Routing](http://guides.rubyonrails.org/routing.html)
 
 #### Job of the controller
 * Recall, the URL is parsed by the router, which locates and calls the right controller
@@ -18,6 +51,9 @@ title: Understanding controllers
     1. Calls the action method, with the parameters corresponding to the 'rest' of the url
     1. When action completes, a view of the same name is located (error: Can't find Views html.erb file in the views/<controllername>/ directory)
     1. View's 'erb' is expanded and returned, through controller, router, web server, back to the user.
+
+#### Review of HTTP
+* Lets go more in depth: <%= link_to_topic :http %>
 
 #### Resources in Rails
 * Automatic wiring of plumbing between urls, routing, models, and controllers
