@@ -3,12 +3,32 @@ title: Authentication
 ---
 <%= homework_hdr %>
 * Read: * Reference: [Ruby on Rails Tutorail](http://ruby.railstutorial.org/chapters/modeling-users#book_menu) - Chapters 6,7 and 8. <%= deliverable "Keep a notepad nearby. Write down points of things you learned, and points of things you are still confused by."%>
-* Think. This web site is a "static web site." Research what that means. Figure out where this web site is hosted. Explain how you think the logic for the search page is implemented. Where does that algorithm run?" <%= deliverable "Piazza post with a response to those questions."
+* Think. This web site is a "static web site." Research what that means. Figure out where this web site is hosted. Explain how you think the logic for the search page is implemented. Where does that algorithm run?" <%= deliverable "Piazza post with a response to those questions." %>
+* Continuing from the last lecture... Right now, the url "/posts/1/comments/3" gives a "routing error" meaning there is something wrong with the routes.rb. Routes.rb contained these lines:
+<%= code_begin %>
+Resdemo::Application.routes.draw do
+  resources :comments
+  resources :posts
+end
+<%= code_end %>
+<%= deliverable "How would you modify Routes.rb to make that url not generate a routing error?" %>
+#### Resources in Rails
+* Automatic wiring of plumbing between urls, routing, models, and controllers
+* Takes advantage of standardized patterns
+    * Nesting model in the URLs
+    * CRUD operations as actions
+    * Path naming (path_to_user instead of "")
+    * Controller naming
+* Huge time saver and bug saver!
 
+#### Controller Actions
+* Who calls the controller action?
+* What parameters are supplied automatically by the controller action?
+* Sessions, why they are needed and how they work
+* Why does it take two separate actions to implement "create"?
 
-
-#### Introduction
-* As an app runs, need to know "who is loggred in"
+#### Introduction to Authentication
+* As an app runs, need to know "who is logged in"
 * Remember the case of "no one is logged in"
 * User is designated internally by a User (or Account, or similar concept)
 
