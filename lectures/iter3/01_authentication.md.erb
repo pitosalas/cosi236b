@@ -13,7 +13,10 @@ Resdemo::Application.routes.draw do
 end
 <%= code_end %>
 <%= deliverable "How would you modify Routes.rb to make that url not generate a routing error?" %>
-#### Resources in Rails
+
+#### Review of controllers
+
+##### Resources in Rails
 * Automatic wiring of plumbing between urls, routing, models, and controllers
 * Takes advantage of standardized patterns
     * Nesting model in the URLs
@@ -22,18 +25,21 @@ end
     * Controller naming
 * Huge time saver and bug saver!
 
-#### Controller Actions
+##### Controller Actions
 * Who calls the controller action?
 * What parameters are supplied automatically by the controller action?
 * Sessions, why they are needed and how they work
 * Why does it take two separate actions to implement "create"?
 
-#### Introduction to Authentication
+#### Authentication
+
+##### Introduction
+* Beware: this is hairy
 * As an app runs, need to know "who is logged in"
 * Remember the case of "no one is logged in"
 * User is designated internally by a User (or Account, or similar concept)
 
-#### Mechanics
+##### Mechanics
 * Authentication support has to:
 	* Present a log in page
 	* Present a account creation page
@@ -43,20 +49,11 @@ end
 * But should not:
 	* Decide what operations that user may do or not. Conceptually and architecturally, should be kept separately
 	* Store the user's password in a database. How do you authenticate then?
+* Authorization
+  * Can "the currently logged in user" do this operation?
+  * Often implemented with a list of "user types" (e.g. admin, professor, student)
+  * And with a list of "operation types" (e.g. "administration", "read-write", "read-only")
+  * Guard code in each controller/action
 
-#### Implementation and Tools
-* There are several popular gems to implement authentication
-* Beware that the fact that there is a gem does not mean that it's trivial
-* You need to understand what's going on.
-* Advice: Avoid getting fancy with OAuth, or FB or LinkedIn log in.
-* Start with a simple password
-
-<%= include_topic :basic_authentication %>
-
-
-
-
-
-
-
-
+#### How it works in Rails
+* <%= link_to_topic :basic_authentication %>
