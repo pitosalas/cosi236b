@@ -1,0 +1,72 @@
+---
+title: Web Services and REST
+---
+
+<%= homework_hdr %>
+* Read [RESTful Web Services](http://www.ibm.com/developerworks/webservices/library/ws-restful/)
+* Read [Chapter 5 of Roy Fielding's Dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1)
+
+#### What is a web service?
+
+* Up to now we've said that a web server delivers html to clients
+* Consider this web page: [Olin College Engineering Courses](http://wikis.olin.edu/coursecatalog/doku.php?id=course_listings:engr)
+* What would "TeachBack" do if it wanted to have a list of courses pre-populated with a college's courses? 
+  * Grab all the text `curl http://wikis.olin.edu/coursecatalog/doku.php?id=course_listings:engr > olincourses.txt`
+  * Write a program to parse that page and then load the results into a database.
+  * This is called "scraping" and usually that would violate a copyright
+* Server can also deliver information in "machine readable" formats (such as JSON or XML)
+* The term "API" is used to describe the permissable ways that one program can call another, such as a library
+* Web Service API is when this is between servers on the internet
+
+##### Protocols
+* This can be done with many different standards and formats and protocols
+  * SOAP: [Simple Object Access Protocol](http://wikis.olin.edu/coursecatalog/doku.php?id=course_listings:engr)
+  * XMLRPC: [XML-RPC](http://en.wikipedia.org/wiki/XML-RPC)
+  * REST: [Representational State Transfer](http://en.wikipedia.org/wiki/Representational_state_transfer) -- our focus
+* <%= discussion "What are some of the big differences between calling a gem's API and calling a web service API?. Performance? Error handling and recovery? Security? Cost sharing?" %>
+
+##### Pause to look at the big picture
+* Servers on the internet, anywhere, can be called as objects and methods
+* Resources of all kinds can be offered to clients with no coordination
+* The internet becomes a huge, amazing Operating SystemsRetrieving information
+
+#### One level deeper
+
+##### RPC - Remote Procedure Calls
+* Imagine a procedure (method) : return_fortune_cookie.
+* What would it mean to call it between two computers?
+* What would it mean to call it between two computers over the internet?
+* How would you approach it?
+* REST - A different way to think about RPC
+
+##### REST based on HTTP: Mini review
+* HTTP Verbs: GET (HEAD), PUT, POST, DELETE.
+* Think of everything in terms of a 'resource' that is being manipulated
+* For example, GET means get a representation of the resource marked, e.g.
+  * GET http://www.facebook.com/user/pitosalas
+  * GET http://www.facebok.com/users 
+  * GET 0.0.0.0:3000/cards/1.xml
+* Some things are harder to fit with the model
+  * What might a fortune cookie service look like as REST?
+  * The 'resource' here is a single fortune
+  * http://cookieserver.org/fortunes/1
+  * http://cookieserver.org/fortunes
+  * http://cookieserver.org/fortunes/random
+
+* Note fortunes/random, random is not exactly identifying a resource; but close enough.
+* What if caching was done strictly by url?
+  * Two advantages:
+    * some rhyme or reason on how to build urls and
+    * make logical use of url space
+    * Different 'representations' possible: html and xml, but others too, say csv or video
+    * Big one: Standards allow caching in the cloud
+
+#### Leveraging Web Services
+* Accessing a Web Service. Look for a library or binding for it.
+* The [Programmable Web](http://www.programmableweb.com) has thousands of APIs you can use
+
+#### Delivering Web Services
+* Providing a Web API from your server
+* Need to decide on the url (REST!)
+* Often nice to provide sample code and a 'binding' to a language
+
