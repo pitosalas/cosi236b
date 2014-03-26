@@ -35,8 +35,36 @@ title: AJAX
   1. browser based code (javascript) interprets that data
   1. browser to change what is displayed in the current page
 
-#### Browser
-* Document Object Mode
+#### Deeper dive
+
+##### Browser
+* Document Object Model
+* DOM is a strictly a tree with the <html></html> at the top of the tree.
+  * Each tree element is a node
+  * The top of the tree, the root node, is <html></html>, is assigned to the variable *document*
+  * Every node has exactly one parent
+* The DOM tree can be modified AT RUN TIME
+  * Any change to the DOM tree is immediately reflected in the visual appearance of the page!
+
+##### Javacript
+* Has nothing to do with Java!
+* Name is strictly political (back in the 80's I think)
+* Browser :: HTML :: CSS :: JavaScript are interlocking partners that work together
+
+#### Server Push
+* Not a real term :)
+* Many different ways of approaching. Sort of immature right now
+* Key techniques are:
+  * Periodic background polling by browser
+  * WebSockets and variants which maintain an open connection to server
+* Some links to study further:
+  * [Pusher Service - free push](http://pusher.com)
+  * [Websockets on Heroku](https://devcenter.heroku.com/articles/ruby-websockets)
+
+##### Tour of JavaScript examples
+* demo1
+* demo2
+* demo3
 
 #### References
 * [Javascript Coding Conventions](http://javascript.crockford.com/code.html)
