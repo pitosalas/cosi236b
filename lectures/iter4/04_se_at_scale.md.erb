@@ -10,14 +10,75 @@ css_class: bold
 <%= team_deliverable "3 links to demonstrate that you've succeeded in those tasks!" %>
 
 #### Continuing about scaling
+* Review caching
+	* TradeAssistant: uses caching for stock information
+	* DNS: uses caching for speed and scaling
+	* Which of our products also uses some form of caching? Or could?
 * Continue at "Techniques: Asycnhronous processing"
 * Topic: <%= link_to_topic :scaling %>
 
-#### Continuous Integration and Deployment
+#### Cloud Services and Deployment
 
-#### Cloud Services
+##### Classification
+* Software as a Service (SaaS): Delivers an application through a web site or app.
+	* Examples: Google Docs, Basecamp, etc.
+	* Differentiated by what the app is
+* Platform as a Service (Paas): Deploy your apps to the cloud, based on their platform.
+	* Examples: Heroku, Some AWS offerings, Google App Engine, Pusher.com
+	* Differentiated by what the platform is, e.g. Node.js, Rails, Go, etc.
+* Infrastructure as a Service (IaaS): Delivers some part of infrastructure through the cloud. Infrastructure might be CPU, Disk, Queueing service etc.
+	* Examples: Amazon EC2, S3, Google Compute Engine, Linode, etc.
+	* Differentiated by what part(s) of infrastructure are offered.
+* Pricing
+	* These services usually have a free tier, but for 'serious' use you need to pay
+	* Some examples:
+		* Heroku: free for 'open source' (which I think means Public Github Repos)
+		* Pusher: free for up to 20 simultanuous connections. (what is the lifecycle of a connection?)
+		* S3 (AWS Storage Server): 5 GB of Amazon S3 standard storage free (see further details on their site.)
+		* CodeClimate: Free for public repos
+		* Github: Free for public Repos
+
+##### Reference
+* [Heroku: Getting Started With Rails](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+* [Classification of Cloud Services](http://bitheads.com/what-types-of-cloud-services-are-available/)
+
+#### Continuous Integration and Deployment
+* Objective 1: Make sure that bugs are detected as early as possible
+	* Make sure that your source code is consistent, and integrates
+	* How? Have as much testing as you can
+	* Push all code to your source code repository
+	* Automatically triggers a pull/run all tests
+	* Ideally: report to team and to individual developer
+* Objective 2: Make sure users can start playing with new product asap
+	* Once integration works, push it out to a server
+	* Often there's a test or staging server
+	* Historically: Release every year, 6 months, month, week. Now: Serious standard is release multiple times a day!
+	* Automatic and continuous deployment
+* Let's take a look at my Codeship.io and Heroku.com installations and review how they work
+
+##### Reference
+* [Rails Integration Testing](http://babinho.net/2013/03/rails-integration-testing-with-minitestspec-and-capybara)
+* [Deploy from Codeship.io to Heroku](https://www.codeship.io/documentation/tutorials/continuous-deployment-heroku-github-ruby-rails/)
 
 #### Feature Switches
+* A direct result of engaging in continuous integration
+* How it works:
+	* Usually the toggling happens in the UI.
+	* Defines a sybol list of features that you may want to hide, e.g. "petSurvey", "profileUpload", "FacebookIntegration"
+	* And then "guard" the corresponding html, making sure user cannot get to that feature
+	* Site Administrator is able to turn on and off features without re-deploying
+<%= code_begin %>
+    <toggle name="petSurvey">
+      <p>Take our new <a href = 'petSurvey'>pet survey</a></p>
+    </toggle>
+<%= code_end %>
+* Reasons
+	* Hide a feature that is not done yet
+	* Hide a feature that you discovered is broken
+	* Hide a feature that is killing performance
+	* Split testing
 
-#### Monitoring and Reporting
+##### Reference
+* [Marin Fowler on Feature Toggle](http://martinfowler.com/bliki/FeatureToggle.html)
+* [Fearure Switches at Flickr](http://code.flickr.net/2009/12/02/flipping-out/)
 
